@@ -1,2 +1,2 @@
 # JavaBrowser
-Without JB You Say A Picture.
+A Browser of Java Socket with GUI.

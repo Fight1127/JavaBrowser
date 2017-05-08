@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Emorhc/Emorhc.iml" filepath="$PROJECT_DIR$/Emorhc/Emorhc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaBrowser.iml" filepath="$PROJECT_DIR$/.idea/JavaBrowser.iml" />
+    </modules>
+  </component>
+</project>
