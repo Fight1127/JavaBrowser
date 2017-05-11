@@ -54,7 +54,7 @@ public class WebPager {
     }
 
     private boolean load(String url) {
-        http = new SocketHttp(url);
+        http = new SocketHttp("http://" + url + "/");
         if (http.request()) {
             int statusHttp = http.getStatus();
             System.out.println("" + http.getStatus());

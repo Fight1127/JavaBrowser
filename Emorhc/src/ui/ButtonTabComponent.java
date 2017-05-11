@@ -17,7 +17,7 @@ public class ButtonTabComponent extends JPanel {
     private final JButton button = new TabButton();
 
     public ButtonTabComponent(String title, JTabbedPane pane) {
-        //unset default FlowLayout' gaps
+        // unset default FlowLayout' gaps
         super(new FlowLayout(FlowLayout.LEFT, 0, 0));
         if (pane == null) {
             throw new NullPointerException("TabbedPanel is null.");
@@ -28,10 +28,10 @@ public class ButtonTabComponent extends JPanel {
         label.setForeground(Color.ORANGE);
 
         add(label);
-        //add more space between the label and the button
+        // add more space between the label and the button
         label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 5));
         add(button);
-        //add more space to the top of the component
+        // add more space to the top of the component
         setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
     }
 
@@ -40,20 +40,20 @@ public class ButtonTabComponent extends JPanel {
         public TabButton() {
             int size = 17;
             setPreferredSize(new Dimension(size, size));
-            setToolTipText("关闭此标签");
-            //Make the button looks the same for all Laf's
+            setToolTipText("关闭此标签页");
+            // Make the button looks the same for all Laf's
             setUI(new BasicButtonUI());
-            //Make it transparent
+            // Make it transparent
             setContentAreaFilled(false);
-            //No need to be focusable
+            // No need to be focusable
             setFocusable(false);
             setBorder(BorderFactory.createEtchedBorder());
             setBorderPainted(false);
-            //Making nice rollover effect
-            //we use the same listener for all buttons
+            // Making nice rollover effect
+            // we use the same listener for all buttons
             addMouseListener(buttonMouseListener);
             setRolloverEnabled(true);
-            //Close the proper tab by clicking the button
+            // Close the proper tab by clicking the button
             addActionListener(this);
         }
 
@@ -64,17 +64,17 @@ public class ButtonTabComponent extends JPanel {
             }
         }
 
-        //we don't want to update UI for this button
+        // we don't want to update UI for this button
         public void updateUI() {
 
         }
 
-        //paint the cross
+        // paint the cross
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             Graphics2D g2 = (Graphics2D) g;
             Stroke stroke = g2.getStroke();
-            //shift the image for pressed buttons
+            // shift the image for pressed buttons
             if (!getModel().isPressed()) {
                 g2.translate(-1, -1);
             }
@@ -86,7 +86,7 @@ public class ButtonTabComponent extends JPanel {
             int delta = 6;
             g.drawLine(delta, delta, getWidth() - delta, getHeight() - delta - 1);
             g.drawLine(getWidth() - delta, delta, delta, getHeight() - delta - 1);
-            //leave the graphics unchanged
+            // leave the graphics unchanged
             if (!getModel().isPressed()) {
                 g.translate(1, 1);
             }
